@@ -37,9 +37,7 @@ function setup() {
     pinkos.push(new Pinko(j,375));
   }
 
-  if(frameCount%60 === 0){
-    particles.push(new Particle(random(width/2-10,width/2+10),10,10))
-  }
+  
   
   Engine.run(engine)
 }
@@ -47,7 +45,10 @@ function setup() {
 function draw() {
   background("black");  
   
- 
+  if(frameCount%60 === 0){
+    particles.push(new Particle(random(width/2-10,width/2+10),10,10))
+  }
+
   for(var k = 0; k<divisions.length; k++ ){
     divisions[k].display();
   }
